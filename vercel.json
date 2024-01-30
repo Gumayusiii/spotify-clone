@@ -1,0 +1,5 @@
+{
+    "routes": [
+      { "src": "script.js", "dest": "api-artists/artists.json" }
+    ]
+  }
