@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone - Made by Gumayusiii</title>
+    
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/vars.css">
+    <link rel="stylesheet" href="./src/styles/main-content.css">
+    <link rel="stylesheet" href="./src/styles/card-background.css">
+    <link rel="stylesheet" href="./src/styles/footers-content.css">
+    <link rel="stylesheet" href="./src/styles/sidebar-footer.css">
+    <link rel="stylesheet" href="./src/styles/media-query.css">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css"
+        integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
+        <link rel="shortcut icon" href="./src/assets/icons/favicon.png">
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <nav class="sidebar__navigation">
+            <div class="logo">
+                <a href="">
+                    <img src="./src/assets/icons/logo-spotify.png" alt="Logo" />
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="">
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.8841 2.51136L3.01191 7.7432C2.98142 7.76118 2.96271 7.79394 2.96271 
+                            7.82934V21.4183C2.96271 21.4736 3.00748 21.5183 3.06271 21.5183H9.38547C9.4407 21.5183 
+                            9.48547 21.4736 9.48547 21.4183V14.6241C9.48547 14.5689 9.53024 14.5241 9.58547 
+                            14.5241H14.4609C14.5162 14.5241 14.5609 14.5689 14.5609 14.6241V21.4183C14.5609 
+                            21.4736 14.6057 21.5183 14.6609 21.5183H20.9763C21.0316 21.5183 21.0763 21.4736 
+                            21.0763 21.4183V7.82988C21.0763 7.79419 21.0573 7.76121 21.0264 7.74333L11.9849 
+                            2.51095C11.9537 2.49287 11.9152 2.49303 11.8841 2.51136Z" fill="#FFFFFF" stroke="#FFFFFF" 
+                            stroke-width="2"/>
+                            </svg>                            
+                        <span class="home__text" style="color: #FFFFFF;">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.9268 16.3972C20.176 14.7888 20.9199 
+                            12.7688 20.9199 10.5745C20.9199 5.32788 16.6667 1.07446 11.4199 1.07446C6.1731 1.07446 
+                            1.91992 5.32788 1.91992 10.5745C1.91992 15.821 6.1731 20.0745 11.4199 20.0745C13.752 
+                            20.0745 15.8877 19.2346 17.541 17.8401L22.334 22.6326C22.7244 23.0232 23.3577 23.0232 
+                            23.748 22.6326C24.1387 22.2424 24.1387 21.6091 23.748 21.2185L18.9268 16.3972ZM11.4199 
+                            18.1746C7.22266 18.1746 3.81982 14.7717 3.81982 10.5745C3.81982 6.3772 7.22266 2.97437 
+                            11.4199 2.97437C15.6172 2.97437 19.02 6.3772 19.02 10.5745C19.02 14.7717 15.6172 18.1746 
+                            11.4199 18.1746Z" fill="#b3b3b3" stroke="#b3b3b3" stroke-width="0.5"/>
+                            </svg>                                                        
+                        <span class="search__text">Search</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="library">
+            <div class="library__content">
+                <button class="library__button">
+                    <svg class="library__icon" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.00403 1.78516C2.45032 1.78516 2.00134 2.23389 2.00134 2.78809V21.1777C2.00134 21.7319 2.45032 22.1807 
+                        3.00403 22.1807C3.55774 22.1807 4.00671 21.7319 4.00671 21.1777V2.78809C4.00671 2.23389 3.55774 1.78516 3.00403 1.78516Z" fill="#b3b3b3"/>
+                        <path d="M8.04504 2.78809C8.04504 2.23389 8.49402 1.78516 9.04773 1.78516C9.60144 1.78516 10.0504 2.23389 10.0504 
+                        2.78809V21.1777C10.0504 21.7319 9.60144 22.1807 9.04773 22.1807C8.49402 22.1807 8.04504 21.7319 8.04504 21.1777V2.78809Z" fill="#b3b3b3"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M14.047 3.0083C14.047 2.14941 14.9872 1.62207 
+                        15.7203 2.06982L21.5109 5.60547C21.6722 5.7041 21.8024 5.84033 21.8932 5.99902C21.9865 6.1626 
+                        22.0377 6.3501 22.0377 6.54443V21.1147C22.0377 21.7222 21.545 22.2148 20.9376 22.2148H15.1471C14.5394 
+                        22.2148 14.047 21.7222 14.047 21.1147V3.0083Z" fill="#b3b3b3"/>
+                        </svg>                        
+                    <span class="library__text">Your Library</span>
+                </button>
+                <svg class="plus__icon" width="17" height="18" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.9805 1C12.4282 1 11.9805 1.44775 11.9805 2V11H2.98047C2.42818 11 1.98047 
+                    11.4478 1.98047 12C1.98047 12.5522 2.42818 13 2.98047 13H11.9805V22C11.9805 22.5522 12.4282 
+                    23 12.9805 23C13.5328 23 13.9805 22.5522 13.9805 22V13H22.9805C23.5328 13 23.9805 12.5522 
+                    23.9805 12C23.9805 11.4478 23.5328 11 22.9805 11H13.9805V2C13.9805 1.44775 13.5328 1 
+                    12.9805 1Z" fill="#b3b3b3"/>
+                    </svg>                    
+            </div>
+            <div class="library__scroll-container">
+                <section class="section-playlist">
+                    <div class="section-playlist__content">
+                        <span class="text title">Create your first playlist</span>
+                        <span class="text subtitle">It's easy, we'll help you</span>
+                        <button class="section-playlist__button">
+                            <span>Create playlist</span>
+                        </button>
+                    </div>
+                </section>
+                <section class="section-podcast">
+                        <div class="section-podcast__content">
+                            <span class="text title">Let's find some podcast to follow</span>
+                            <span class="text subtitle">We'll keep you updated on new episodes</span>
+                            <button class="section-podcast__button">
+                                <span>Browse podcasts</span>
+                            </button>
+                        </div> 
+                        </section>
+            </div>
+            <div class="sidebar-footer">
+                <div class="sidebar-footer__links">
+                    <a href="">Legal</a>
+                    <a href="">Privacy Center</a>
+                    <a href="">Privacy Policy</a>
+                    <a href="">Cookies</a>
+                    <a href="">About Ads</a>
+                    <a href="">Acessibility</a>
+                    <a href="">Notice At Collection</a>
+                    <a href="">Your Privacy Choices</a>
+                </div>
+                <div class="sidebar-footer__rodape">
+                    <a href="">Cookies</a>
+                        <button class="languages__button">
+                            <span class="fa fa-globe"></span>
+                            <span>English</span>
+                        </button>
+                </div>
+            </div>
+        </div>      
+            </div>
+            
+<main>
+    <div class="main-content">
+        <nav class="topbar__navigation">
+            <div class="navigation">
+                <button class="arrow-left">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.3141 2.48096C17.9235 2.09033 17.2905 2.09033 16.8998 2.48096L8.79498 10.5859L8.76813 10.5591L7.35394 11.9731L7.3808 12L7.35394 12.0269L8.76813 13.4414L8.7951 13.4146L16.8998 21.519C17.2903 21.9097 17.9235 21.9097 18.314 21.519C18.5663 21.2666 18.6557 20.9131 18.5821 20.5894C18.5417 20.4121 18.4523 20.2432 18.314 20.105L10.2093 12L18.3141 3.89502C18.7047 3.50488 18.7047 2.87158 18.3141 2.48096Z" fill="white"/>
+                        </svg>                        
+                </button>
+                <button class="arrow-right">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.64679 2.48096C8.03741 2.09033 8.67047 2.09033 9.0611 2.48096L17.166 10.5859L17.1928 10.5591L18.607 11.9731L18.5801 12L18.607 12.0269L17.1928 13.4414L17.1658 13.4146L9.0611 21.519C8.67059 21.9097 8.03741 21.9097 7.64691 21.519C7.39459 21.2666 7.30524 20.9131 7.37885 20.5894C7.41925 20.4121 7.50861 20.2432 7.64691 20.105L15.7516 12L7.64679 3.89502C7.25629 3.50488 7.25629 2.87158 7.64679 2.48096Z" fill="white"/>
+                        </svg>                        
+                </button>
+                <div class="topbar__search">
+                    <img src="./src/assets/icons/search.png" alt="">
+                    <input id="search-input" maxlength="800" autocorrect="off" autocapitalize="off" 
+                    spellcheck="false" placeholder="What do you want to listen?" value="">
+                </div>
+                </div>
+                <div class="topbar__login">
+                    <button class="subscribe">Sign up</button>
+                    <button class="login">Log in</button>
+            </div>
+        </nav>
+
+        <div class="playlist-container">
+         <!--   <div id="result-playlists"> -->
+            <!--   <div class="playlist">
+                    <h1 id="greeting">Good Morning</h1>
+                    <h2 class="session">Browse all</h2>
+                </div> -->
+                <div class="offer__scroll-container">
+                    <section  class="main-container__conteudo">
+                        <div class="header-menu">
+                            <h2>Spotify Playlists</h2>
+                            <p>Show All</p>
+                        </div>
+                        <div id="result-playlists" class="main-container__playlist">
+                            <ul>
+                                <li>
+                                    <img src="https://i.scdn.co/image/ab67706f0000000254473de875fea0fd19d39037" alt="">
+                                    <button class="play">
+                                        <svg width="25" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.76099 20.1948V3.81427L18.7864 12.0895L4.76099 20.1948Z" fill="black" stroke="black"/>
+                                            </svg>     
+                                    </button>
+                                    <div class="content-music">
+                                        <h3>lofi beats</h3>
+                                        <p>chill beats, lofi vibes, new tracks every week... </p>
+                                    </div>
+                                    
+                                </li>
+                                <li>
+                                    <img src="https://i.scdn.co/image/ab67706f0000000264979b6e970b4791a42d375c" alt="">
+                                    <button class="play">
+                                        <svg width="25" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.76099 20.1948V3.81427L18.7864 12.0895L4.76099 20.1948Z" fill="black" stroke="black"/>
+                                            </svg>
+                                    </button>
+                                    <div class="content-music">
+                                        <h3>Today's Top Hits</h3>
+                                        <p>Teddy Swims is on top of the Hottest 50!</p>
+                                    </div>
+                                    
+                                </li>
+                                <li>
+                                    <img src="https://i.scdn.co/image/ab67706f00000002dec17246891b5b4eb97bdb0d" alt="">
+                                    <button class="play">
+                                        <svg width="25" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.76099 20.1948V3.81427L18.7864 12.0895L4.76099 20.1948Z" fill="black" stroke="black"/>
+                                            </svg>
+                                    </button>
+                                    <div class="content-music">
+                                        <h3>Chillout Lounge</h3>
+                                    <p>Just lean back and enjoy relaxed beats.</p>
+                                    </div>
+                                    
+                                </li>
+                                <li>
+                                    <img src="https://i.scdn.co/image/ab67706f00000002d771dc645afe9b87978b1d3e" alt="">
+                                    <button class="play">
+                                        <svg width="25" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.76099 20.1948V3.81427L18.7864 12.0895L4.76099 20.1948Z" fill="black" stroke="black"/>
+                                            </svg>
+                                    </button>
+                                    <div class="content-music">
+                                        <h3>All Out 2020s</h3>
+                                    <p>The biggest songs of the 2020s.</p>
+                                    </div>
+                                    
+                                </li>
+                                <li>
+                                    <img src="https://i.scdn.co/image/ab67706f00000002bdeb1c317ac2dd10f2397e4c" alt="">
+                                    <button class="play">
+                                        <svg width="25" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.76099 20.1948V3.81427L18.7864 12.0895L4.76099 20.1948Z" fill="black" stroke="black"/>
+                                            </svg>
+                                    </button>
+                                    <div class="content-music">
+                                        <h3>Jazz in the Background</h3>
+                                    <p>Soft instrumental Jazz for all your activities.</p>
+                                    </div>
+                                    
+                                </li>
+<!--
+                                <li>
+                                    <img src="https://i.scdn.co/image/ab67706f00000002f4d83a6cb7f51f6d9f6717de" alt="">
+                                    <button class="play">
+                                        <span class="fa fa-play"></span>
+                                    </button>
+                                    <div class="content-music">
+                                        <h3>lorem ipsum</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    
+                                </li>
+
+                                <li>
+                                    <img src="https://i.scdn.co/image/ab67706f00000002d073e656e546e43bc387ad79" alt="">
+                                    <button class="play">
+                                        <span class="fa fa-play"></span>
+                                    </button>
+                                    <div class="content-music">
+                                        <h3>lorem ipsum</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    
+                                </li>
+
+                                <li>
+                                    <img src="https://i.scdn.co/image/ab67706f0000000278b4745cb9ce8ffe32daaf7e" alt="">
+                                    <button class="play">
+                                        <span class="fa fa-play"></span>
+                                    </button>
+                                    <div class="content-music">
+                                        <h3>lorem ipsum</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    
+                                </li>
+
+                                <li>
+                                    <img src="https://i.scdn.co/image/ab67706f00000002468762ec9fd93a2dc3b167ee" alt="">
+                                    <button class="play">
+                                        <span class="fa fa-play"></span>
+                                    </button>
+                                    <div class="content-music">
+                                        <h3>lorem ipsum</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    
+                                </li>
+
+                                <li>
+                                    <img src="https://i.scdn.co/image/ab67706f000000027876fe166a29b8e6b8db14da" alt="">
+                                    <button class="play">
+                                        <span class="fa fa-play"></span>
+                                    </button>
+                                    <div class="content-music">
+                                        <h3>lorem ipsum</h3>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    </div>
+                                    
+                                </li> -->
+                            </ul>
+                        </div>
+        
+                        <div id="result-artist" class="hidden">
+                            <div class="grid-container">
+                                <div class="artist-card" id="">
+                                    <div class="card-img">
+                                        <img id="artist-img" class="artist-img" />
+                                        <div class="play">
+                                            <span class="fa fa-solid fa-play"></span>
+                                        </div>
+                                    </div>
+                                    <div class="card-text">
+                                        <a title="Foo Fighters" class="vst" href=""></a>
+                                        <span class="artist-name" id="artist-name"></span>
+                                        <span class="artist-categorie">Artist</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </section>
+                 <!--  <div class="offer__list"> 
+                        <section class="offer__list-item">
+                            <a href="" class="cards">
+                                <div class="cards card1">
+                                    <img src="https://i.scdn.co/image/ab6765630000ba8a81f07e1ead0317ee3c285bfa" alt="" />
+                                    <span>Podcast</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card2">
+                                    <img src="https://concerts.spotifycdn.com/images/live-events_category-image.jpg" alt="" />
+                                    <span>Live Events</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card3">
+                                    <img src="https://t.scdn.co/images/ea364e99656e46a096ea1df50f581efe" alt="" />
+                                    <span>Made For You</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card4">
+                                    <img src="https://i.scdn.co/image/ab67706f000000027ea4d505212b9de1f72c5112" alt="" />
+                                    <span>New Releases</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card5">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf097a46192e6bb67e52cdff60" alt="" />
+                                    <span>Summer</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card6">
+                                    <img src="https://i.scdn.co/image/ab67706f00000002d28bebbf4c5bbbf02763b0f6" alt="" />
+                                    <span>Brazil</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card7">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf47cd260b964b0ea8babfb45d" alt="" />
+                                    <span>Sertanejo</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card8">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf341265d27be641506e56c346" alt="" />
+                                    <span>In the car</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card9">
+                                    <img src="https://t.scdn.co/images/7262179db37c498480ef06bfacb60310.jpeg" alt="" />
+                                    <span>Podcast Charts</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card10">
+                                    <img src="https://t.scdn.co/images/209c867f5bb34076b0dcc9deeb1868e6" alt="" />
+                                    <span>Brazil Podcast Releases</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card11">
+                                    <img src="https://i.scdn.co/image/ab6765630000ba8a7816cf087d5372059d5242c1" alt="" />
+                                    <span>Brazilian Creators</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card12">
+                                    <img src="https://i.scdn.co/image/ab67656300005f1fb02b40e89324364b8b5f75b2" alt="" />
+                                    <span>Only on Spotify Brazil</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card13">
+                                    <img src="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg" alt="" />
+                                    <span>Charts</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card14">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafb8011aa2ee5d5f50cafddea4" alt="" />
+                                    <span>Brazilian Funk</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card15">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafa862ab80dd85682b37c4e768" alt="" />
+                                    <span>Pop</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card16">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf9e3dea60be755ccd97b7351f" alt="" />
+                                    <span>Hip-Hop</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card17">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf1737cf815e34c15df7b49d86" alt="" />
+                                    <span>Samba & Pagode</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card18">
+                                    <img src="https://t.scdn.co/images/d0fb2ab104dc4846bdc56d72b0b0d785.jpeg" alt="" />
+                                    <span>Discover</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card19">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf3bad7100618b22db3d6477c7" alt="" />
+                                    <span>MPB</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card20">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf8a3e269ac16d241f2aeb7452" alt="" />
+                                    <span>AMPLIFIKA</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card21">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafdfdaac1cf9574a196ca25196" alt="" />
+                                    <span>Dance/Electronic</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card22">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafc237e034906c45e2920a54cb" alt="" />
+                                    <span>Christian & Gospel</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card23">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafae7e69beb88f16969641b53e" alt="" />
+                                    <span>Rock</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card24">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafa1a252e3a815b65778d8c2aa" alt="" />
+                                    <span>Indie</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card25">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafe760702de052fbefea27064a" alt="" />
+                                    <span>RADAR</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card26">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf50cfe3fbd3a9fb8810da45ea" alt="" />
+                                    <span>GLOW</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card27">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf9ed6e364e8839210dc4dbff7" alt="" />
+                                    <span>EQUAL</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card28">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafcc1499bbb8565f490858c2bc" alt="" />
+                                    <span>Fresh Finds</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card29">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf271f9d895003c5f5561c1354" alt="" />
+                                    <span>Mood</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card30">
+                                    <img src="https://i.scdn.co/image/ab67706f000000029249b35f23fb596b6f006a15" alt="" />
+                                    <span>Workout</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card31">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf47e942f5bea637f4f4760170" alt="" />
+                                    <span>Chill</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card32">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafcbf80f8ea695536eace4fd2c" alt="" />
+                                    <span>Party</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card33">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafe914a07d20cec7a65e2e5dad" alt="" />
+                                    <span>At home</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card34">
+                                    <img src="https://i.scdn.co/image/ab67706f00000002b70e0223f544b1faa2e95ed0" alt="" />
+                                    <span>Sleep</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card35">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafb03c6f8e7efca2ae36f41b31" alt="" />
+                                    <span>Love</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card36">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafe53d71d0920a4f1f441d803c" alt="" />
+                                    <span>Cooking & Dining</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card37">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf8dec632effd9735fa8aba06e" alt="" />
+                                    <span>Wellness</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card38">
+                                    <img src="https://i.scdn.co/image/ab67706f00000002e4eadd417a05b2546e866934" alt="" />
+                                    <span>Focus</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card39">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf1867113f5218598847550acd" alt="" />
+                                    <span>Trending</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card40">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caff005a355830c374754d32868" alt="" />
+                                    <span>Decades</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card41">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf14030380532b34badbf0a229" alt="" />
+                                    <span>Spotify Singles</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card42">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf77b15c1010e781bdf0653736" alt="" />
+                                    <span>Cities</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card43">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf4b36a2c31432ace68d90c4f2" alt="" />
+                                    <span>Travel</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card44">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafa59f90c077c9f618fd0dde30" alt="" />
+                                    <span>Latin</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card45">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caff4e38be86ca48a3b10884ae3" alt="" />
+                                    <span>R&B</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card46">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf013ee3c983e6f60bf28bad5a" alt="" />
+                                    <span>K-pop</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card47">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafb973ab1288f74f333e7e2e22" alt="" />
+                                    <span>Songwriters</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card48">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafbbf84e26e69a78883118913c" alt="" />
+                                    <span>Nature & Noise</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card49">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf3e87a8609ad96dd14c5e1ef3" alt="" />
+                                    <span>Music + Talk</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card50">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf8a04560a209b3f32165ea8a2" alt="" />
+                                    <span>Kids & Family</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card51">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafb4c4523336133ec3c7fd1744" alt="" />
+                                    <span>TV & Movies</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card52">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf26dd3719e8824756914ae61f" alt="" />
+                                    <span>Gaming</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card53">
+                                    <img src="https://i.scdn.co/image/ab67706f00000002c19c5f13f8b3ff2d73ff00bc" alt="" />
+                                    <span>Anime</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card54">
+                                    <img src="https://t.scdn.co/images/37732285a0ff4e24987cdf5c45bdf31f.png" alt="" />
+                                    <span>Tastemaker</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card55">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf0b0c71c920d6a745461ada69" alt="" />
+                                    <span>Netflix</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card56">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafdad1281e13697e8d8cf8f347" alt="" />
+                                    <span>Student</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card57">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf2b1ff59a971dd399dea96009" alt="" />
+                                    <span>League of Legends</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card58">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf6ba3a99776446ab3b295d2a6" alt="" />
+                                    <span>Reggae</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card59">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf8ba1febbb4f77336b6f9aace" alt="" />
+                                    <span>Caribbean</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card60">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf04faccb4f5e1828600921f37" alt="" />
+                                    <span>Afro</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card61">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf3271ef796498ae4f97db81e2" alt="" />
+                                    <span>Arab</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card62">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf43752ff9764492b8e2a5bf54" alt="" />
+                                    <span>Asian Pacific Islander Heritage Month</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card63">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf12809992dfc5b318892ea07b" alt="" />
+                                    <span>Classical</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card64">
+                                    <img src="https://i.scdn.co/image/ab67706f000000028ed1a5002b96c2ea882541b2" alt="" />
+                                    <span>Instrumental</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card65">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafe289743024639ea8f202364d" alt="" />
+                                    <span>Jazz</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card66">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafcc70a3c2e4c71398708bdc4a" alt="" />
+                                    <span>Folk & Acoustic</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card67">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafd82e2c83fe100a89e9cbb2a2" alt="" />
+                                    <span>Soul</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card68">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafefa737b67ec51ec989f5a51d" alt="" />
+                                    <span>Metal</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card69">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafb2cdd7a95b0a5444aa15cfb5" alt="" />
+                                    <span>Punk</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card70">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caff22ac5cab318d550b593ffac" alt="" />
+                                    <span>Blues</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card71">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafbb0e4ea229824157eee7467d" alt="" />
+                                    <span>Funk & Disco</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card72">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafa6ee95dc83af715115f40522" alt="" />
+                                    <span>Ambient</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card73">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005caf106e29a9f294cb4265da6af9" alt="" />
+                                    <span>Alternative</span>
+                                </div>
+                            </a>
+                            <a href="" class="cards">
+                                <div class="cards card74">
+                                    <img src="https://i.scdn.co/image/ab67fb8200005cafc0d2222b4c6441930e1a386e" alt="" />
+                                    <span>Country</span>
+                                </div>
+                            </a>
+                            </a>
+                            <div id="result-artist" class="hidden">
+                                <div class="grid-container">
+                                    <div class="artist-card" id="">
+                                        <div class="card-img">
+                                            <img id="artist-img" class="artist-img" />
+                                            <div class="play">
+                                                <span class="fa fa-solid fa-play"></span>
+                                            </div>
+                                        </div>
+                                        <div class="card-text">
+                                            <a title="Foo Fighters" class="vst" href=""></a>
+                                            <span class="artist-name" id="artist-name"></span>
+                                            <span class="artist-categorie">Artista</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    </div> -->
+
+    <div class="menu-footer">
+        <nav class="menu-footer__links">
+            <ul>
+                <li>Company</li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Jobs</a>
+                </li>
+                <li>
+                    <a href="#">For the Record</a>
+                </li>
+            </ul>
+            <ul>
+                <li>Communities</li>
+                <li>
+                    <a href="#">For Artists</a>
+                </li>
+                <li>
+                    <a href="#">Developers</a>
+                </li>
+                <li>
+                    <a href="#">Advertising</a>
+                </li>
+                <li>
+                    <a href="#">Investors</a>
+                </li>
+                <li>
+                    <a href="#">Vendors</a>
+                </li>
+            </ul>
+            <ul>
+                <li>Useful Links</li>
+                <li>
+                    <a href="#">Support</a>
+                </li>
+                <li>
+                    <a href="#">Free Mobile App</a>
+                </li>
+            </ul>
+            
+            <ul class="social-media">
+                <li>
+                    <a href="https://www.instagram.com/spotify/">
+                        <img src="./src/assets/icons/instagram.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/spotify">
+                        <img src="./src/assets/icons/twitter.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/SpotifyBrasil/?brand_redir=6243987495">
+                        <img src="./src/assets/icons/facebook.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <hr>
+        <p>© 2024 Spotify AB - Made by Gumayusiii</p>
+    </div>
+</main>
+
+    <footer class="disclaimer-premium">
+        <div class="text">
+            <p class="disclaimer-premium__title">Preview of Spotify</p>
+            <p class="disclaimer-premium__subtitle">
+                Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.
+              </p>
+        </div>
+        <div class="button">
+            <button type="button">Sign up free</button>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./search.js"></script>
+</body>
+
+</html>
